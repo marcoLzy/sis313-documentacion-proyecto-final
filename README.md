@@ -15,7 +15,7 @@
 
 ## 🎯 I. Objetivo del Proyecto
 
-Describe el objetivo específico y medible del proyecto, tal como se define en el banco de proyectos o tal como lo plantean como proyecto.
+Describe el objetivo de manera puntual, debe ser específica y medible, tal como se define en el banco de proyectos o tal como lo plantean como proyecto.
 
 > **Objetivo:** [Indicar el objetivo del proyecto, ej: "Diseñar y configurar un clúster de Base de Datos con replicación Maestro-Esclavo para optimizar el rendimiento y la tolerancia a fallos."]
 

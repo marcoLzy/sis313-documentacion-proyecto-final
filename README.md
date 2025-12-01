@@ -42,6 +42,7 @@ Diseñar e implementar una plataforma de mensajería instantánea empresarial ba
 ### 3.2. Conceptos de la Asignatura Puestos en Práctica (T1 - T6)
 
 ✅ **Alta Disponibilidad (T2) y Tolerancia a Fallos:**
+
 •	Replicación Master-Master bidireccional de MariaDB garantizando sincronización automática de datos
 
 •	Dos servidores ejabberd operando en modo activo-activo con sesiones distribuidas
@@ -53,6 +54,7 @@ Diseñar e implementar una plataforma de mensajería instantánea empresarial ba
 •	Sistema continúa operando completamente funcional con un servidor fuera de línea
 
 ✅**Seguridad y Hardening (T5):**
+
 •	Certificados SSL/TLS X.509 con clave RSA 4096 bits para cifrado de comunicaciones
 
 •	Autenticación SCRAM (Salted Challenge Response) protegiendo contra ataques de diccionario
@@ -68,6 +70,7 @@ Diseñar e implementar una plataforma de mensajería instantánea empresarial ba
 •	Contraseñas hasheadas con salt aleatorio nunca almacenadas en texto plano
 
 ✅ **Automatización y Gestión (T6):**
+
 •	14 scripts Bash desarrollados para administración completa del sistema
 
 •	Menú interactivo unificado accesible mediante comando 'menu' desde cualquier ubicación
@@ -83,6 +86,7 @@ Diseñar e implementar una plataforma de mensajería instantánea empresarial ba
 •	Generación automática de logs en /var/log/ para auditoría y troubleshooting
 
 ✅ **Balanceo de Carga y Proxy Inverso (T3/T4):**
+
 •	Nginx configurado como stream proxy para balanceo de conexiones TCP XMPP puerto 5222
 
 •	Algoritmo 'least_conn' para tráfico HTTP distribuyendo según carga de servidor
@@ -98,6 +102,7 @@ Diseñar e implementar una plataforma de mensajería instantánea empresarial ba
 •	Proxy para múltiples protocolos: XMPP (5222), HTTP Upload (5280), HTTPS Admin (5443)
 
 ✅ **Monitoreo y Observabilidad (T4/T1):**
+
 •	Stack Prometheus-Grafana proporcionando visibilidad completa en tiempo real
 
 •	Recolección de métricas cada 15 segundos de CPU, RAM, disco, red, procesos

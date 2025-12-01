@@ -250,7 +250,7 @@ Configurar VM1 con dos interfaces: enp0s3 (NAT/DHCP) y enp0s8 (192.168.10.2/29 e
 | Columna 1 | Columna 2 | Columna 3 |
 |----------|-----------|-----------|
 |Test de Failover de ejabberd(Apagar VM2)| VM1 detecta fallo y redirige automáticamente nuevas conexiones a VM3. Usuarios existentes se reconectan automáticamente.| ✅ OKTiempo de detección: <10s Reconexión automática exitosa|
-| Dato D   | Dato E    | Dato F    |
+| Test de Failover de BD(Detener MariaDB en VM3)| VM2 continúa operando normalmente. Replicación se restablece automáticamente al reiniciar VM3. | ✅ OK VM2 operativa sin interrupciones Replicación restaurada en <30s |
 
 ## 📚 VII. Conclusiones y Lecciones Aprendidas
 

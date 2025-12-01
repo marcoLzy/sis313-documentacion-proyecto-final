@@ -1,6 +1,4 @@
-# 🚀 Proyecto Final SIS313: [PLATAFORMA DE MENSAJERÍA INSTANTÁNEA SEGURA
-CON ALTA DISPONIBILIDAD
-]
+# 🚀 Proyecto Final SIS313: [PLATAFORMA DE MENSAJERÍA INSTANTÁNEA SEGURA CON ALTA DISPONIBILIDAD]
 
 > **Asignatura:** SIS313: Infraestructura, Plataformas Tecnológicas y Redes<br>
 > **Semestre:** 2/2025<br>

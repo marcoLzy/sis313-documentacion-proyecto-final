@@ -58,9 +58,11 @@ CORREGIR===============
 
 > 
 
-| Resultado Esperado| Resultado Obtenido|Rol|IP Física|IP Virtual|Red Lógica|SO|
-
-
+| VM/Host | Rol | IP Física  |IP Virtual|Red Lógica|SO|
+| :--- | :--- | :--- |
+| Marco lopez Yapu |  Rol | IP Física |
+| Luis hernan Huallpa Franses |  Administrador de Sistemas | luishuf |
+| Rodrigo Caballero Yucra  | Administrador de Sistemas |rodricy |
 
 ### 4.2. Estrategia Adoptada (Opcional)
 **ESTRATEGIA DE REPLICACION (CRÍTICA):**

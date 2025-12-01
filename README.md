@@ -10,9 +10,9 @@ CON ALTA DISPONIBILIDAD
 
 | Nombre Completo | Rol en el Proyecto | Contacto (GitHub/Email) |
 | :--- | :--- | :--- |
-| Marco lopez Yapu |  Administrador de Sistemas | [marcomlz] |
-| Luis hernan Huallpa Franses |  Administrador de Sistemas | [luishuf] |
-| Rodrigo Caballero Yucra  | Administrador de Sistemas | [rodricy] |
+| Marco lopez Yapu |  Administrador de Sistemas | marcomlz |
+| Luis hernan Huallpa Franses |  Administrador de Sistemas | luishuf |
+| Rodrigo Caballero Yucra  | Administrador de Sistemas |rodricy |
 
 
 ## 🎯 I. Objetivo del Proyecto
@@ -54,18 +54,32 @@ CORREGIR===============
 
 ### 4.1. Diseño Esquemático
 
-Incluye un diagrama de la topología final. Muestra claramente la segmentación de red, las IPs utilizadas, y los flujos de tráfico.
 <img width="652" height="628" alt="XMPP-Página-1 drawio" src="https://github.com/user-attachments/assets/91bad02e-fc24-4dbf-9066-6888ced46b1d" />
 
 > 
 <img width="727" height="193" alt="image" src="https://github.com/user-attachments/assets/cbeba79d-5d28-4d59-8ca8-9459af2d0f0d" />
 
 ### 4.2. Estrategia Adoptada (Opcional)
+Estrategia de Replicación:
+•	Replicación Master-Master bidireccional para permitir escrituras en ambos servidores
+•	Auto-increment offset configurado (VM2=1, VM3=2) con increment=2 para evitar conflictos de ID
+•	Replicación solo de base ejabberd_db mediante binlog_do_db para eficiencia
+•	Monitoreo continuo de Slave_IO_Running y Slave_SQL_Running para detección de fallos
+•	Scripts automatizados de recuperación ante errores de replicación
 
-Describe la estrategia de diseño y las decisiones críticas.
+**Estrategia de Hardening:**
+•	Aplicación de principio de privilegios mínimos en usuarios de sistema y base de datos
+•	Firewall con política deny-all y whitelist explícita de puertos necesarios
+•	Certificados SSL/TLS autofirmados con clave RSA 4096 bits renovables anualmente
+•	Contraseñas con hash SCRAM iterativo resistente a ataques de fuerza bruta
+•	Auditoría de accesos mediante logs centralizados en /var/log/
 
-* **Estrategia de Replicación:** [Ej. Se optó por la replicación asíncrona de MariaDB debido a la menor latencia, priorizando la separación de lectura/escritura con ProxySQL.]
-* **Estrategia de Hardening:** [Ej. Se aplicaron los estándares CIS de hardening mediante un playbook de Ansible para la automatización de la seguridad inicial.]
+**Estrategia de Balanceo:**
+•	Algoritmo primario-backup para conexiones XMPP garantizando afinidad de sesión
+•	Health checks activos cada 30 segundos con umbral de 3 fallos consecutivos
+•	Failover automático con tiempo de recuperación <10 segundos
+•	Distribución de carga HTTP Upload mediante least_conn para optimizar throughput
+
 
 ## 📋 V. Guía de Implementación y Puesta en Marcha
 

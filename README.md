@@ -61,13 +61,19 @@ CORREGIR===============
 
 ### 4.2. Estrategia Adoptada (Opcional)
 **Estrategia de Replicación (CRÍTICA):**
+
 --Replicación Master-Master bidireccional: Permite escrituras simultáneas en ambos servidores eliminando punto único de fallo
+
 --Auto-increment offset (VM2=1, VM3=2) con increment=2:  Previene conflictos de claves primarias, esencial para la sincronización
+
 --Monitoreo continuo de Slave_IO_Running y Slave_SQL_Running:  Detección temprana de fallos de replicación
 
 **Estrategia de Balanceo (CRÍTICA):**
+
 --Algoritmo primario-backup con afinidad de sesión: Garantiza que usuarios mantengan conexión estable con mismo servidor
+
 --Health checks cada 30 segundos con umbral de 3 fallos: Detección rápida de servidores caídos
+
 --Failover automático <10 segundos:  Recuperación casi instantánea ante fallos
 
 

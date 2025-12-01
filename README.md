@@ -41,15 +41,93 @@ Diseñar e implementar una plataforma de mensajería instantánea empresarial ba
 
 ### 3.2. Conceptos de la Asignatura Puestos en Práctica (T1 - T6)
 
-Marca con un ✅ los temas avanzados de la asignatura que fueron implementados:
+✅ **Alta Disponibilidad (T2) y Tolerancia a Fallos:**
+•	Replicación Master-Master bidireccional de MariaDB garantizando sincronización automática de datos
 
-* **Alta Disponibilidad (T2) y Tolerancia a Fallos:** [Describir cómo: Ej. Replicación DB y uso de Keepalived para failover.] ✅
-* **Seguridad y Hardening (T5):** [Describir cómo: Ej. Uso de Firewall (UFW), Hardening SSH, Certificados SSL/TLS.] ✅
-* **Automatización y Gestión (T6):** [Describir cómo: Ej. Scripts de Backup (DRP) o Playbooks de Ansible para la configuración.]
-* **Balanceo de Carga/Proxy (T3/T4):** [Describir cómo: Ej. Nginx/HAProxy para distribución de tráfico y health checks.]
-* **Monitoreo (T4/T1):** [Describir cómo: Ej. Uso de Prometheus/Grafana para métricas en tiempo real.]
-* **Networking Avanzado (T3):** [Describir cómo: Ej. Implementación de VLANs o Enrutamiento Estático.]
-CORREGIR===============
+•	Dos servidores ejabberd operando en modo activo-activo con sesiones distribuidas
+
+•	Failover automático mediante health checks cada 30 segundos detectando servidores caídos
+
+•	Recuperación automática de replicación ante errores transitorios de red
+
+•	Sistema continúa operando completamente funcional con un servidor fuera de línea
+
+✅**Seguridad y Hardening (T5):**
+•	Certificados SSL/TLS X.509 con clave RSA 4096 bits para cifrado de comunicaciones
+
+•	Autenticación SCRAM (Salted Challenge Response) protegiendo contra ataques de diccionario
+
+•	Firewall iptables configurado con política de denegar por defecto, permitiendo solo puertos necesarios
+
+•	NAT en VM1 aislando red interna 192.168.10.0/29 del acceso externo directo
+
+•	Usuarios de sistema con privilegios mínimos (principio de least privilege)
+
+•	Configuración sudo restrictiva permitiendo solo comandos específicos sin contraseña
+
+•	Contraseñas hasheadas con salt aleatorio nunca almacenadas en texto plano
+
+✅ **Automatización y Gestión (T6):**
+•	14 scripts Bash desarrollados para administración completa del sistema
+
+•	Menú interactivo unificado accesible mediante comando 'menu' desde cualquier ubicación
+
+•	Tareas cron programadas: backup diario (2:00 AM), health check cada 15 min, limpieza semanal
+
+•	Autenticación SSH mediante claves Ed25519 para ejecución remota sin contraseña
+
+•	Scripts de verificación de replicación con alertas automáticas ante desincronización
+
+•	Respaldos automáticos con compresión gzip y retención de 7 días
+
+•	Generación automática de logs en /var/log/ para auditoría y troubleshooting
+
+✅ **Balanceo de Carga y Proxy Inverso (T3/T4):**
+•	Nginx configurado como stream proxy para balanceo de conexiones TCP XMPP puerto 5222
+
+•	Algoritmo 'least_conn' para tráfico HTTP distribuyendo según carga de servidor
+
+•	Esquema primario-backup para XMPP: VM2 principal, VM3 activa automáticamente ante falla
+
+•	Health checks cada 30 segundos con max_fails=3 y fail_timeout=30s
+
+•	Persistencia de sesiones mediante IP del cliente para mantener conexiones coherentes
+
+•	Rate limiting configurado para protección contra ataques DDoS
+
+•	Proxy para múltiples protocolos: XMPP (5222), HTTP Upload (5280), HTTPS Admin (5443)
+
+✅ **Monitoreo y Observabilidad (T4/T1):**
+•	Stack Prometheus-Grafana proporcionando visibilidad completa en tiempo real
+
+•	Recolección de métricas cada 15 segundos de CPU, RAM, disco, red, procesos
+
+•	Dashboard 'Node Exporter Full' con 100+ gráficas de rendimiento y utilización
+
+•	Alertas configurables para umbrales críticos (disco >85%, CPU >90%, servicio caído)
+
+•	Métricas personalizadas de ejabberd: usuarios conectados, mensajes/segundo, sesiones activas
+
+•	Visualización del estado de replicación Master-Master en tiempo real
+
+•	Retención de métricas históricas de 15 días para análisis de tendencias
+
+✅ Networking Avanzado (T3):
+
+•	Diseño de red privada 192.168.10.0/29 con subnetting eficiente (6 IPs utilizables)
+
+•	VM1 con dual-interface: enp0s3 (NAT externa) + enp0s8 (red interna)
+
+•	Configuración de NAT mediante iptables MASQUERADE para acceso a Internet desde VM2/VM3
+
+•	Reglas de forwarding IP permitiendo enrutamiento entre interfaces de red
+
+•	Configuración estática de IPs mediante Netplan con gateway y DNS personalizados
+
+•	Port forwarding de VirtualBox exponiendo servicios: 8080→80, 8443→443, 9090, 3000
+
+•	Aislamiento de seguridad: red interna no accesible directamente desde exterior
+
 ## 🌐 IV. Diseño de la Infraestructura y Topología
 
 ### 4.1. Diseño Esquemático

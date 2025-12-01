@@ -60,25 +60,15 @@ CORREGIR===============
 <img width="727" height="193" alt="image" src="https://github.com/user-attachments/assets/cbeba79d-5d28-4d59-8ca8-9459af2d0f0d" />
 
 ### 4.2. Estrategia Adoptada (Opcional)
-Estrategia de Replicación:
-•	Replicación Master-Master bidireccional para permitir escrituras en ambos servidores
-•	Auto-increment offset configurado (VM2=1, VM3=2) con increment=2 para evitar conflictos de ID
-•	Replicación solo de base ejabberd_db mediante binlog_do_db para eficiencia
-•	Monitoreo continuo de Slave_IO_Running y Slave_SQL_Running para detección de fallos
-•	Scripts automatizados de recuperación ante errores de replicación
+**Estrategia de Replicación (CRÍTICA):**
+-Replicación Master-Master bidireccional - Permite escrituras simultáneas en ambos servidores eliminando punto único de fallo
+-Auto-increment offset (VM2=1, VM3=2) con increment=2 - Previene conflictos de claves primarias, esencial para la sincronización
+-Monitoreo continuo de Slave_IO_Running y Slave_SQL_Running - Detección temprana de fallos de replicación
 
-**Estrategia de Hardening:**
-•	Aplicación de principio de privilegios mínimos en usuarios de sistema y base de datos
-•	Firewall con política deny-all y whitelist explícita de puertos necesarios
-•	Certificados SSL/TLS autofirmados con clave RSA 4096 bits renovables anualmente
-•	Contraseñas con hash SCRAM iterativo resistente a ataques de fuerza bruta
-•	Auditoría de accesos mediante logs centralizados en /var/log/
-
-**Estrategia de Balanceo:**
-•	Algoritmo primario-backup para conexiones XMPP garantizando afinidad de sesión
-•	Health checks activos cada 30 segundos con umbral de 3 fallos consecutivos
-•	Failover automático con tiempo de recuperación <10 segundos
-•	Distribución de carga HTTP Upload mediante least_conn para optimizar throughput
+**Estrategia de Balanceo (CRÍTICA):**
+-Algoritmo primario-backup con afinidad de sesión - Garantiza que usuarios mantengan conexión estable con mismo servidor
+-Health checks cada 30 segundos con umbral de 3 fallos - Detección rápida de servidores caídos
+-Failover automático <10 segundos - Recuperación casi instantánea ante fallos
 
 
 ## 📋 V. Guía de Implementación y Puesta en Marcha

@@ -58,8 +58,8 @@ CORREGIR===============
 
 > 
 
-| Columna 1 | Columna 2 | Columna 3 |
-|----------|-----------|-----------|
+| Columna 1 | Columna 2 | Columna 3 |    |
+|----------|-----------|-----------|-----
 | Dato A   | Dato B    | Dato C    |
 | Dato D   | Dato E    | Dato F    |
 ### 4.2. Estrategia Adoptada (Opcional)

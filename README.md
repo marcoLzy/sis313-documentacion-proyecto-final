@@ -58,11 +58,12 @@ CORREGIR===============
 
 > 
 
-| Columna 1 | Columna 2 | Columna 3 |          |          |          |
+| VM/Host | Rol | IP Física |   IP Virtual       |   Red Lógica    | SO  |
 |----------|-----------|-----------|-----------|----------|----------|
-| Dato A   | Dato B    | Dato C    | Dato A   | Dato B    | Dato C    |
-| Dato D   | Dato E    | Dato F    | Dato A   | Dato B    | Dato C    |
-
+| VM1 (proxy)  | Proxy/Load Balancer + Monitoreo    | 192.168.10.2 10.0.2.15 (NAT)
+  | 192.168.1.7 (Port Forward)| Red Interna /29+ NAT | Ubuntu 24.04 LTS   |
+| VM2 (xmpp1)  | Dato E    | Dato F    | Dato A   | Dato B    | Dato C    |
+| VM3 (xmpp2)   | Dato E    | Dato F    | Dato A   | Dato B    | Dato C    |
 ### 4.2. Estrategia Adoptada (Opcional)
 **ESTRATEGIA DE REPLICACION (CRÍTICA):**
 

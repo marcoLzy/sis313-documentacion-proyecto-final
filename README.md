@@ -249,9 +249,7 @@ Configurar VM1 con dos interfaces: enp0s3 (NAT/DHCP) y enp0s8 (192.168.10.2/29 e
 
 | Columna 1 | Columna 2 | Columna 3 |
 |----------|-----------|-----------|
-|Test de Failover de ejabberd(Apagar VM2)
- | VM1 detecta fallo y redirige automáticamente nuevas conexiones a VM3. Usuarios existentes se reconectan automáticamente.| ✅ OK
-Tiempo de detección: <10s Reconexión automática exitosa|
+|Test de Failover de ejabberd(Apagar VM2)| VM1 detecta fallo y redirige automáticamente nuevas conexiones a VM3. Usuarios existentes se reconectan automáticamente.| ✅ OKTiempo de detección: <10s Reconexión automática exitosa|
 | Dato D   | Dato E    | Dato F    |
 
 ## 📚 VII. Conclusiones y Lecciones Aprendidas

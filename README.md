@@ -58,10 +58,11 @@ CORREGIR===============
 
 > 
 
-| Columna 1 | Columna 2 | Columna 3 |    |
-|----------|-----------|-----------|-----
-| Dato A   | Dato B    | Dato C    |
-| Dato D   | Dato E    | Dato F    |
+| Columna 1 | Columna 2 | Columna 3 |          |          |          |
+|----------|-----------|-----------|-----------|----------|----------|
+| Dato A   | Dato B    | Dato C    | Dato A   | Dato B    | Dato C    |
+| Dato D   | Dato E    | Dato F    | Dato A   | Dato B    | Dato C    |
+
 ### 4.2. Estrategia Adoptada (Opcional)
 **ESTRATEGIA DE REPLICACION (CRÍTICA):**
 

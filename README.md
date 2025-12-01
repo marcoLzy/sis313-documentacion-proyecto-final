@@ -143,7 +143,7 @@ Diseñar e implementar una plataforma de mensajería instantánea empresarial ba
 
 | VM/Host | Rol | IP Física |   IP Virtual       |   Red Lógica    | SO  |
 |----------|-----------|-----------|-----------|----------|----------|
-| VM1 (proxy)  | Proxy/Load Balancer + Monitoreo    | 192.168.10.2 10.0.2.15 (NAT)|/A  | Red Interna /29+ NAT | Ubuntu 24.04 LTS   |
+| VM1 (proxy)  | Proxy/Load Balancer + Monitoreo    | 192.168.10.2 10.0.2.15 (NAT)| N/A  | Red Interna /29+ NAT | Ubuntu 24.04 LTS   |
 | VM2 (xmpp1) | Servidor XMPP Primario + BD Master 1   | 192.168.10.3  | N/A  | Red Interna /29    | Ubuntu 24.04 LTS    |
 | VM3 (xmpp2)  | Servidor XMPP Secundario + BD Master 2   | 192.168.10.4    | N/A   | Red Interna /29  | Ubuntu 24.04 LTS   |
 ### 4.2. Estrategia Adoptada (Opcional)

@@ -264,6 +264,7 @@ Configurar VM1 con dos interfaces: enp0s3 (NAT/DHCP) y enp0s8 (192.168.10.2/29 e
 |Prueba de Scripts de Gestión|Menú interactivo funciona. Todos los 14 scripts ejecutan sin errores. SSH sin contraseña operativo.|✅ OK Todas las opciones del menú funcionales Ejecución remota exitosa|
 
 ## 📚 VII. Conclusiones y Lecciones Aprendidas
+**Principales Logros:**
 
 •	Se implementó exitosamente una plataforma de mensajería empresarial completa con disponibilidad >99.5%
 
@@ -279,3 +280,19 @@ Configurar VM1 con dos interfaces: enp0s3 (NAT/DHCP) y enp0s8 (192.168.10.2/29 e
 
 •	La arquitectura escalable permite crecimiento mediante adición de nodos sin rediseño
 
+**Desafíos Técnicos Superados:**
+•	Configuración de replicación bidireccional requirió ajuste fino de parámetros auto_increment
+
+•	Resolución de conflictos de certificados SSL autofirmados en clientes XMPP
+
+•	Optimización del balanceo de carga para mantener afinidad de sesiones XMPP
+
+•	Depuración de problemas de replicación mediante análisis detallado de binlogs
+
+•	Configuración de permisos SSH y sudo para automatización sin comprometer seguridad
+
+•	Ajuste de timeouts de Nginx para mantener conexiones XMPP de larga duración
+
+
+
+El proyecto demostró que es posible construir infraestructura empresarial robusta utilizando exclusivamente tecnologías open source, alcanzando niveles de disponibilidad y rendimiento comparables a soluciones comerciales pero con control total y costos significativamente menores.

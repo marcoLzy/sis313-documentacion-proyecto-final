@@ -255,6 +255,10 @@ Configurar VM1 con dos interfaces: enp0s3 (NAT/DHCP) y enp0s8 (192.168.10.2/29 e
 |Test de Balanceo de Carga|Conexiones se distribuyen entre VM2 y VM3 según disponibilidad. Conexiones persistentes mantienen afinidad.|✅ OK Distribución primario-backup funcionando Afinidad de sesión mantenida|
 |Prueba de Mensajería|Mensajes entre usuarios se entregan instantáneamente. Mensajes offline se entregan al reconectar.|✅ OK Latencia: <500ms Mensajes offline entregados correctamente|
 |Test de Múltiples Dispositivos|Usuario conectado desde 2 dispositivos recibe mensajes en ambos (Carbons).|✅ OKSincronización multi-dispositivo activa Mensajes replicados instantáneamente|
+|Prueba de Backup Automático|Backup ejecuta diariamente a las 2:00 AM, genera archivo .sql.gz válido, retiene 7 días.|✅ OK Backup ejecutado exitosamente Verificación de integridad: 100%|
+|Test de Monitoreo|Grafana muestra métricas en tiempo real de las 3 VMs. Prometheus recolecta datos cada 15s.|✅ OK Dashboards activos y actualizando 150+ métricas recolectándose|
+|Prueba de Scripts de Gestión|Menú interactivo funciona. Todos los 14 scripts ejecutan sin errores. SSH sin contraseña operativo.|✅ OK Todas las opciones del menú funcionales Ejecución remota exitosa|
+
 ## 📚 VII. Conclusiones y Lecciones Aprendidas
 
 •	Se implementó exitosamente una plataforma de mensajería empresarial completa con disponibilidad >99.5%

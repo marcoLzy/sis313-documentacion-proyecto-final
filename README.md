@@ -21,6 +21,7 @@ Diseñar e implementar una plataforma de mensajería instantánea empresarial ba
 ## 🛠️ III. Tecnologías y Conceptos Implementados
 
 ### 3.1. Tecnologías Clave
+
 **ejabberd:** Servidor XMPP empresarial escrito en Erlang/OTP, proporciona mensajería instantánea, presencia, salas grupales, transferencia de archivos y llamadas de voz/video. Implementado en modo redundante en VM2 y VM3.
 
 **MariaDB:** Sistema de gestión de bases de datos relacional, almacena usuarios, mensajes, historial y configuraciones. Configurado en replicación Master-Master bidireccional para sincronización automática entre VM2 y VM3.

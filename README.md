@@ -94,7 +94,9 @@ CORREGIR===============
 
 
 ### 5.2. Despliegue (Ejecución de la Automatización)
+
 Configurar VM1 con dos interfaces: enp0s3 (NAT/DHCP) y enp0s8 (192.168.10.2/29 estática)
+
 Habilitar IP forwarding en VM1 editando /etc/sysctl.conf: net.ipv4.ip_forward=1
 
 Configurar iptables NAT en VM1 para MASQUERADE en interface enp0s3

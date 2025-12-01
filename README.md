@@ -1,4 +1,6 @@
-# 🚀 Proyecto Final SIS313: [Título del Proyecto]
+# 🚀 Proyecto Final SIS313: [PLATAFORMA DE MENSAJERÍA INSTANTÁNEA SEGURA
+CON ALTA DISPONIBILIDAD
+]
 
 > **Asignatura:** SIS313: Infraestructura, Plataformas Tecnológicas y Redes<br>
 > **Semestre:** 2/2025<br>
@@ -41,18 +43,19 @@ VirtualBox: Plataforma de virtualización utilizada para crear y gestionar las t
 
 Marca con un ✅ los temas avanzados de la asignatura que fueron implementados:
 
-* **Alta Disponibilidad (T2) y Tolerancia a Fallos:** [Describir cómo: Ej. Replicación DB y uso de Keepalived para failover.]
-* **Seguridad y Hardening (T5):** [Describir cómo: Ej. Uso de Firewall (UFW), Hardening SSH, Certificados SSL/TLS.]
+* **Alta Disponibilidad (T2) y Tolerancia a Fallos:** [Describir cómo: Ej. Replicación DB y uso de Keepalived para failover.] ✅
+* **Seguridad y Hardening (T5):** [Describir cómo: Ej. Uso de Firewall (UFW), Hardening SSH, Certificados SSL/TLS.] ✅
 * **Automatización y Gestión (T6):** [Describir cómo: Ej. Scripts de Backup (DRP) o Playbooks de Ansible para la configuración.]
 * **Balanceo de Carga/Proxy (T3/T4):** [Describir cómo: Ej. Nginx/HAProxy para distribución de tráfico y health checks.]
 * **Monitoreo (T4/T1):** [Describir cómo: Ej. Uso de Prometheus/Grafana para métricas en tiempo real.]
 * **Networking Avanzado (T3):** [Describir cómo: Ej. Implementación de VLANs o Enrutamiento Estático.]
-
+CORREGIR===============
 ## 🌐 IV. Diseño de la Infraestructura y Topología
 
 ### 4.1. Diseño Esquemático
 
 Incluye un diagrama de la topología final. Muestra claramente la segmentación de red, las IPs utilizadas, y los flujos de tráfico.
+<img width="652" height="628" alt="XMPP-Página-1 drawio" src="https://github.com/user-attachments/assets/91bad02e-fc24-4dbf-9066-6888ced46b1d" />
 
 > 
 | VM/Host | Rol | IP Física | IP Virtual (si aplica) | Red Lógica | SO |

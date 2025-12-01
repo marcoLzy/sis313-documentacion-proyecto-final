@@ -94,9 +94,18 @@ CORREGIR===============
 
 
 ### 5.2. Despliegue (Ejecución de la Automatización)
-1.  **Instalación:** Instalar Ansible en la máquina de control.
-2.  **Configuración:** Editar el archivo de inventario (`hosts.ini`) con las IPs.
-3.  **Ejecución:** Ejecutar el playbook principal: `ansible-playbook setup.yml`.
+Configurar VM1 con dos interfaces: enp0s3 (NAT/DHCP) y enp0s8 (192.168.10.2/29 estática)
+Habilitar IP forwarding en VM1 editando /etc/sysctl.conf: net.ipv4.ip_forward=1
+
+Configurar iptables NAT en VM1 para MASQUERADE en interface enp0s3
+
+Configurar VM2 con IP 192.168.10.3/29, gateway 192.168.10.2, DNS 8.8.8.8
+
+Configurar VM3 con IP 192.168.10.4/29, gateway 192.168.10.2, DNS 8.8.8.8
+
+Verificar conectividad: ping entre VMs y ping a Internet desde VM2/VM3
+
+
 
 ### 5.3. Ficheros de Configuración Clave
 * `/etc/ansible/playbooks/db_cluster.yml`: Playbook para la replicación y ProxySQL.

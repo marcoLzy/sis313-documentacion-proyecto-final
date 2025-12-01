@@ -54,21 +54,6 @@ Diseñar e implementar una plataforma de mensajería instantánea empresarial ba
 
 •	Sistema continúa operando completamente funcional con un servidor fuera de línea
 
-✅**Seguridad y Hardening (T5):**
-
-•	Certificados SSL/TLS X.509 con clave RSA 4096 bits para cifrado de comunicaciones
-
-•	Autenticación SCRAM (Salted Challenge Response) protegiendo contra ataques de diccionario
-
-•	Firewall iptables configurado con política de denegar por defecto, permitiendo solo puertos necesarios
-
-•	NAT en VM1 aislando red interna 192.168.10.0/29 del acceso externo directo
-
-•	Usuarios de sistema con privilegios mínimos (principio de least privilege)
-
-•	Configuración sudo restrictiva permitiendo solo comandos específicos sin contraseña
-
-•	Contraseñas hasheadas con salt aleatorio nunca almacenadas en texto plano
 
 ✅ **Automatización y Gestión (T6):**
 
@@ -78,7 +63,6 @@ Diseñar e implementar una plataforma de mensajería instantánea empresarial ba
 
 •	Tareas cron programadas: backup diario (2:00 AM), health check cada 15 min, limpieza semanal
 
-•	Autenticación SSH mediante claves Ed25519 para ejecución remota sin contraseña
 
 •	Scripts de verificación de replicación con alertas automáticas ante desincronización
 
@@ -98,7 +82,6 @@ Diseñar e implementar una plataforma de mensajería instantánea empresarial ba
 
 •	Persistencia de sesiones mediante IP del cliente para mantener conexiones coherentes
 
-•	Rate limiting configurado para protección contra ataques DDoS
 
 •	Proxy para múltiples protocolos: XMPP (5222), HTTP Upload (5280), HTTPS Admin (5443)
 
@@ -110,19 +93,12 @@ Diseñar e implementar una plataforma de mensajería instantánea empresarial ba
 
 •	Dashboard 'Node Exporter Full' con 100+ gráficas de rendimiento y utilización
 
-•	Alertas configurables para umbrales críticos (disco >85%, CPU >90%, servicio caído)
-
 •	Métricas personalizadas de ejabberd: usuarios conectados, mensajes/segundo, sesiones activas
 
 •	Visualización del estado de replicación Master-Master en tiempo real
 
-•	Retención de métricas históricas de 15 días para análisis de tendencias
 
 ✅ Networking Avanzado (T3):
-
-•	Diseño de red privada 192.168.10.0/29 con subnetting eficiente (6 IPs utilizables)
-
-•	VM1 con dual-interface: enp0s3 (NAT externa) + enp0s8 (red interna)
 
 •	Configuración de NAT mediante iptables MASQUERADE para acceso a Internet desde VM2/VM3
 

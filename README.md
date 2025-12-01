@@ -58,11 +58,7 @@ Incluye un diagrama de la topología final. Muestra claramente la segmentación 
 <img width="652" height="628" alt="XMPP-Página-1 drawio" src="https://github.com/user-attachments/assets/91bad02e-fc24-4dbf-9066-6888ced46b1d" />
 
 > 
-<img width="770" height="201" alt="image" src="https://github.com/user-attachments/assets/37a1792c-f02b-4b7b-9e70-9c18f1c0b16c" />
-
-
-
-
+<img width="727" height="193" alt="image" src="https://github.com/user-attachments/assets/cbeba79d-5d28-4d59-8ca8-9459af2d0f0d" />
 
 ### 4.2. Estrategia Adoptada (Opcional)
 

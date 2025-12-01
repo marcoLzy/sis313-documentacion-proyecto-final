@@ -58,12 +58,11 @@ Incluye un diagrama de la topología final. Muestra claramente la segmentación 
 <img width="652" height="628" alt="XMPP-Página-1 drawio" src="https://github.com/user-attachments/assets/91bad02e-fc24-4dbf-9066-6888ced46b1d" />
 
 > 
-| VM/Host | Rol | IP Física | IP Virtual (si aplica) | Red Lógica | SO |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **VM-LB-M** | Proxy / Load Balancer MASTER | 192.168.10.2 | 192.168.10.1 (VIP) | Red 10 | Ubuntu 22.04 |
-| **VM-DB-M** | Base de Datos (Maestro) | 192.168.20.2 | N/A | Red 20 | Debian 12 |
-| **VM-DB-S** | Base de Datos (Esclavo) | 192.168.20.3 | N/A | Red 20 | Debian 12 |
-| **VM-MON** | Monitoreo (Grafana/Prometheus) | 192.168.10.3 | N/A | Red 10 | Ubuntu 22.04 |
+<img width="770" height="201" alt="image" src="https://github.com/user-attachments/assets/37a1792c-f02b-4b7b-9e70-9c18f1c0b16c" />
+
+
+
+
 
 ### 4.2. Estrategia Adoptada (Opcional)
 

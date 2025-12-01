@@ -83,10 +83,15 @@ Documenta los pasos esenciales para que cualquier persona pueda replicar el proy
 
 ### 5.1. Pre-requisitos
 •	3 Máquinas Virtuales con Ubuntu Server 24.04 LTS instalado.
+
 •	VM1: 2 CPU, 2GB RAM, 20GB disco, 2 interfaces de red (NAT + Internal Network).
+
 •	VM2 y VM3: 2 CPU, 4GB RAM, 30GB disco cada una, 1 interface de red (Internal Network).
+
 •	Acceso root/sudo en todas las máquinas virtuales.
+
 •	Conexión a Internet para descarga de paquetes y actualizaciones.
+
 •	Cliente XMPP Gajim instalado en máquina host Windows para pruebas.
 
 

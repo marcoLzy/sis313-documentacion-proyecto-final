@@ -8,16 +8,14 @@
 
 | Nombre Completo | Rol en el Proyecto | Contacto (GitHub/Email) |
 | :--- | :--- | :--- |
-| [Nombre y Apellido 1] | [Rol Principal: Ej. Arquitecto de Seguridad] | [Usuario de GitHub] |
-| [Nombre y Apellido 2] | [Rol Principal: Ej. Ingeniero de Automatización] | [Usuario de GitHub] |
-| [Nombre y Apellido 3] | [Rol Principal: Ej. Administrador de Sistemas] | [Usuario de GitHub] |
-| [Nombre y Apellido 4] | [Rol Opcional] | [Usuario de GitHub] |
+| [Marco lopez Yapu] |  Administrador de Sistemas | [marcomlz] |
+| [Luis hernan Huallpa Franses] |  Administrador de Sistemas | [luishuf] |
+| [Rodrigo Caballero Yucra ] | [Administrador de Sistemas] | [rodricy] |
+
 
 ## 🎯 I. Objetivo del Proyecto
 
 Diseñar e implementar una plataforma de mensajería instantánea empresarial basada en protocolo XMPP con arquitectura de alta disponibilidad, replicación bidireccional Master-Master de bases de datos, balanceo de carga automatizado y sistema de monitoreo en tiempo real para la Universidad San Francisco Xavier de Chuquisaca.
-
-> **Objetivo:** [Indicar el objetivo del proyecto, ej: "Diseñar y configurar un clúster de Base de Datos con replicación Maestro-Esclavo para optimizar el rendimiento y la tolerancia a fallos."]
 
 ## 💡 II. Justificación e Importancia
 

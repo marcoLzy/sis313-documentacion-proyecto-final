@@ -8,32 +8,38 @@
 
 | Nombre Completo | Rol en el Proyecto | Contacto (GitHub/Email) |
 | :--- | :--- | :--- |
-| [Marco lopez Yapu] |  Administrador de Sistemas | [marcomlz] |
-| [Luis hernan Huallpa Franses] |  Administrador de Sistemas | [luishuf] |
-| [Rodrigo Caballero Yucra ] | [Administrador de Sistemas] | [rodricy] |
+| Marco lopez Yapu |  Administrador de Sistemas | [marcomlz] |
+| Luis hernan Huallpa Franses |  Administrador de Sistemas | [luishuf] |
+| Rodrigo Caballero Yucra  | Administrador de Sistemas | [rodricy] |
 
 
 ## 🎯 I. Objetivo del Proyecto
 
 Diseñar e implementar una plataforma de mensajería instantánea empresarial basada en protocolo XMPP con arquitectura de alta disponibilidad, replicación bidireccional Master-Master de bases de datos, balanceo de carga automatizado y sistema de monitoreo en tiempo real para la Universidad San Francisco Xavier de Chuquisaca.
-
+Objetivos Específicos:
+•	Configurar una infraestructura virtualizada de tres nodos con redundancia en capa de procesamiento
+•	Implementar replicación Master-Master bidireccional entre bases de datos MariaDB
+•	Establecer balanceo de carga mediante Nginx para distribución inteligente de conexiones
+•	Integrar sistema de monitoreo con Prometheus y Grafana para observabilidad completa
+•	Desarrollar scripts de automatización para gestión, respaldos y verificación de integridad
+•	Garantizar seguridad mediante cifrado TLS/SSL y autenticación SCRAM
+•	Lograr disponibilidad superior al 99.5% con recuperación automática ante fallos
 ## 💡 II. Justificación e Importancia
-
-Explica por qué este proyecto es relevante para una infraestructura universitaria o empresarial. Menciona los problemas de la continuidad operacional (T1) o la seguridad (T5) que resuelve.
-
-> **Justificación:** [Explicar la justificación, ej: "El proyecto elimina el Single Point of Failure en la BD, aplicando conceptos de Alta Disponibilidad (T2) y mejorando la capacidad de respuesta de aplicaciones con muchas consultas de lectura."]
+Este proyecto resuelve la necesidad institucional de contar con una plataforma de comunicación segura, confiable y bajo control administrativo propio, eliminando la dependencia de servicios externos comerciales que presentan limitaciones en privacidad, control de datos y costos recurrentes.
 
 ## 🛠️ III. Tecnologías y Conceptos Implementados
 
 ### 3.1. Tecnologías Clave
+ejabberd: Servidor XMPP empresarial escrito en Erlang/OTP, proporciona mensajería instantánea, presencia, salas grupales, transferencia de archivos y llamadas de voz/video. Implementado en modo redundante en VM2 y VM3.
+MariaDB: Sistema de gestión de bases de datos relacional, almacena usuarios, mensajes, historial y configuraciones. Configurado en replicación Master-Master bidireccional para sincronización automática entre VM2 y VM3.
+Nginx: Servidor web y proxy inverso de alto rendimiento, actúa como balanceador de carga en VM1 distribuyendo conexiones XMPP entre servidores backend con health checks y failover automático.
+Prometheus: Sistema de monitoreo y base de datos de series temporales, recolecta métricas de rendimiento, uso de recursos y disponibilidad de servicios cada 15 segundos desde los tres nodos.
+Grafana: Plataforma de visualización y análisis de métricas, proporciona dashboards interactivos en tiempo real mostrando CPU, memoria, disco, red, usuarios conectados y estado de replicación.
+Node Exporter: Agente exportador de métricas de sistema instalado en las tres VMs, expone estadísticas de hardware y sistema operativo para consumo por Prometheus.
+Bash Scripting: Scripts de automatización desarrollados para gestión de usuarios, respaldos automáticos, verificación de replicación, reinicio de servicios y generación de reportes.
+VirtualBox: Plataforma de virtualización utilizada para crear y gestionar las tres máquinas virtuales que componen la infraestructura (VM1, VM2, VM3).
 
-Enumera y describe brevemente el rol de cada software y tecnología utilizada.
 
-* **[Tecnología 1, ej: Nginx]:** [Función específica: Proxy Inverso y Balanceo de Carga con Rate Limiting.]
-* **[Tecnología 2, ej: MariaDB]:** [Función específica: Servidor de Base de Datos principal con replicación.]
-* **[Tecnología 3, ej: Keepalived]:** [Función específica: Implementación de VRRP para Failover de la IP Virtual (HA).]
-* **[Tecnología 4, ej: Ansible/Bash]:** [Función específica: Automatización del despliegue y la configuración de hardening.]
-* **[Tecnología 5, ej: Prometheus/Grafana]:** [Función específica: Monitoreo y visualización de métricas de rendimiento/tráfico.]
 
 ### 3.2. Conceptos de la Asignatura Puestos en Práctica (T1 - T6)
 

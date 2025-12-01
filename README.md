@@ -21,21 +21,21 @@ Diseñar e implementar una plataforma de mensajería instantánea empresarial ba
 ## 🛠️ III. Tecnologías y Conceptos Implementados
 
 ### 3.1. Tecnologías Clave
-ejabberd: Servidor XMPP empresarial escrito en Erlang/OTP, proporciona mensajería instantánea, presencia, salas grupales, transferencia de archivos y llamadas de voz/video. Implementado en modo redundante en VM2 y VM3.
+**ejabberd:** Servidor XMPP empresarial escrito en Erlang/OTP, proporciona mensajería instantánea, presencia, salas grupales, transferencia de archivos y llamadas de voz/video. Implementado en modo redundante en VM2 y VM3.
 
-MariaDB: Sistema de gestión de bases de datos relacional, almacena usuarios, mensajes, historial y configuraciones. Configurado en replicación Master-Master bidireccional para sincronización automática entre VM2 y VM3.
+**MariaDB:** Sistema de gestión de bases de datos relacional, almacena usuarios, mensajes, historial y configuraciones. Configurado en replicación Master-Master bidireccional para sincronización automática entre VM2 y VM3.
 
-Nginx: Servidor web y proxy inverso de alto rendimiento, actúa como balanceador de carga en VM1 distribuyendo conexiones XMPP entre servidores backend con health checks y failover automático.
+**Nginx:** Servidor web y proxy inverso de alto rendimiento, actúa como balanceador de carga en VM1 distribuyendo conexiones XMPP entre servidores backend con health checks y failover automático.
 
-Prometheus: Sistema de monitoreo y base de datos de series temporales, recolecta métricas de rendimiento, uso de recursos y disponibilidad de servicios cada 15 segundos desde los tres nodos.
+**Prometheus:** Sistema de monitoreo y base de datos de series temporales, recolecta métricas de rendimiento, uso de recursos y disponibilidad de servicios cada 15 segundos desde los tres nodos.
 
-Grafana: Plataforma de visualización y análisis de métricas, proporciona dashboards interactivos en tiempo real mostrando CPU, memoria, disco, red, usuarios conectados y estado de replicación.
+**Grafana:** Plataforma de visualización y análisis de métricas, proporciona dashboards interactivos en tiempo real mostrando CPU, memoria, disco, red, usuarios conectados y estado de replicación.
 
-Node Exporter: Agente exportador de métricas de sistema instalado en las tres VMs, expone estadísticas de hardware y sistema operativo para consumo por Prometheus.
+**Node Exporter:** Agente exportador de métricas de sistema instalado en las tres VMs, expone estadísticas de hardware y sistema operativo para consumo por Prometheus.
 
-Bash Scripting: Scripts de automatización desarrollados para gestión de usuarios, respaldos automáticos, verificación de replicación, reinicio de servicios y generación de reportes.
+**Bash Scripting:** Scripts de automatización desarrollados para gestión de usuarios, respaldos automáticos, verificación de replicación, reinicio de servicios y generación de reportes.
 
-VirtualBox: Plataforma de virtualización utilizada para crear y gestionar las tres máquinas virtuales que componen la infraestructura (VM1, VM2, VM3).
+**VirtualBox:** Plataforma de virtualización utilizada para crear y gestionar las tres máquinas virtuales que componen la infraestructura (VM1, VM2, VM3).
 
 
 

@@ -94,18 +94,119 @@ CORREGIR===============
 
 
 ### 5.2. Despliegue (Ejecución de la Automatización)
-
+**Fase 1: Configuración de Red**
 Configurar VM1 con dos interfaces: enp0s3 (NAT/DHCP) y enp0s8 (192.168.10.2/29 estática)
+  
+1.Habilitar IP forwarding en VM1 editando /etc/sysctl.conf: net.ipv4.ip_forward=1
 
-Habilitar IP forwarding en VM1 editando /etc/sysctl.conf: net.ipv4.ip_forward=1
+2.Configurar iptables NAT en VM1 para MASQUERADE en interface enp0s3
 
-Configurar iptables NAT en VM1 para MASQUERADE en interface enp0s3
+3.Configurar VM2 con IP 192.168.10.3/29, gateway 192.168.10.2, DNS 8.8.8.8
 
-Configurar VM2 con IP 192.168.10.3/29, gateway 192.168.10.2, DNS 8.8.8.8
+4.Configurar VM3 con IP 192.168.10.4/29, gateway 192.168.10.2, DNS 8.8.8.8
 
-Configurar VM3 con IP 192.168.10.4/29, gateway 192.168.10.2, DNS 8.8.8.8
+5.Verificar conectividad: ping entre VMs y ping a Internet desde VM2/VM3
 
-Verificar conectividad: ping entre VMs y ping a Internet desde VM2/VM3
+**Fase 2: Instalación de MariaDB y Replicación**
+1. Instalar MariaDB en VM2 y VM3: sudo apt install mariadb-server -y
+
+2. Ejecutar mysql_secure_installation en ambos servidores (password: lopez)
+
+3. Crear base de datos: CREATE DATABASE ejabberd_db CHARACTER SET utf8mb4;
+
+4. Crear usuarios: marco (aplicación) y replicador (replicación) con permisos apropiados
+
+5. Configurar /etc/mysql/mariadb.conf.d/50-server.cnf con parámetros de replicación
+
+6. Configurar server-id=1 (VM2) y server-id=2 (VM3), habilitar binary logging
+
+7. Crear usuario replicador con privilegio REPLICATION SLAVE
+
+8. Configurar CHANGE MASTER TO en VM2 apuntando a VM3 y viceversa
+
+9. Iniciar replicación: START SLAVE; en ambos servidores
+
+10. Verificar con SHOW SLAVE STATUS\G que Slave_IO_Running y Slave_SQL_Running = Yes
+
+**Fase 3: Instalación de ejabberd**
+
+1. Instalar ejabberd en VM2 y VM3: sudo apt install ejabberd -y
+
+2. Generar certificados SSL en ambos servidores con openssl (CN=chat.usfx.edu.bo)
+
+3. Crear directorio /etc/ejabberd/certs/ y configurar permisos 600
+
+4. Editar /etc/ejabberd/ejabberd.yml configurando hosts: chat.usfx.edu.bo
+
+5. Configurar autenticación SQL apuntando a MariaDB local (usuario marco, password lopez)
+
+6. Configurar módulos: mod_mam, mod_muc, mod_http_upload, mod_carboncopy, etc.
+
+7. Habilitar puertos: 5222 (C2S), 5280 (HTTP), 5443 (HTTPS), 3478 (STUN)
+
+8. Crear directorio /var/lib/ejabberd/upload con permisos para ejabberd
+
+9. Reiniciar ejabberd: sudo systemctl restart ejabberd
+
+10. Crear usuario admin: sudo ejabberdctl register marco chat.usfx.edu.bo lopez
+
+**Fase 4: Configuración de Nginx**
+1. Instalar Nginx en VM1: sudo apt install nginx -y
+
+2. Generar certificados SSL para Nginx en /etc/nginx/ssl/
+
+3. Editar /etc/nginx/nginx.conf configurando módulo stream para proxy TCP
+
+4. Configurar upstream xmpp_c2s con VM2 y VM3 (primary + backup)
+
+5. Configurar server listen 5222 con proxy_pass a xmpp_c2s
+
+6. Configurar bloque http para HTTP Upload en puerto 5280
+
+7. Crear /etc/nginx/sites-available/xmpp-proxy con configuración HTTPS
+
+8. Habilitar sitio: ln -s /etc/nginx/sites-available/xmpp-proxy /etc/nginx/sites-enabled/
+
+9. Verificar configuración: sudo nginx -t
+
+10. Reiniciar Nginx: sudo systemctl restart nginx
+
+**Fase 5: Monitoreo**
+1. Instalar Prometheus en VM1: sudo apt install prometheus -y
+
+2. Instalar Node Exporter en las 3 VMs: sudo apt install prometheus-node-exporter -y
+
+3. Editar /etc/prometheus/prometheus.yml agregando scrape_configs para las 3 VMs
+
+4. Reiniciar Prometheus: sudo systemctl restart prometheus
+
+5. Instalar Grafana: descargar desde apt.grafana.com e instalar
+
+6. Acceder a Grafana en http://localhost:3000 (admin/admin, cambiar a lopez)
+
+7. Agregar Prometheus como datasource en Grafana
+
+8. Importar dashboard 1860 (Node Exporter Full)
+
+9. Configurar port forwarding en VirtualBox: 9090 y 3000
+
+**Fase 6: Automatización**
+
+1. Crear directorio /opt/admin_scripts/ en VM1
+
+2. Crear usuario adminsrv en VM2 y VM3 con sudo limitado
+
+3. Generar clave SSH Ed25519 en VM1 y copiar a VM2/VM3
+
+4. Desarrollar 14 scripts: menu, monitor, stats, logs, check_replication, list_users, create_user, change_password, delete_user, backup, view_backups, clean_backups, restart_services, automation_status
+
+5. Dar permisos de ejecución: chmod +x /opt/admin_scripts/*.sh
+
+6. Crear enlace simbólico: ln -s /opt/admin_scripts/xmpp_admin_menu.sh /usr/local/bin/menu
+
+7. Configurar cron para backups diarios, health checks cada 15 min, limpieza semanal
+
+8. Verificar ejecución: sudo crontab -l
 
 
 

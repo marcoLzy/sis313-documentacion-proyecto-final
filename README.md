@@ -79,8 +79,6 @@ CORREGIR===============
 
 ## 📋 V. Guía de Implementación y Puesta en Marcha
 
-Documenta los pasos esenciales para que cualquier persona pueda replicar el proyecto (instalación, configuración de ficheros clave, comandos).
-
 ### 5.1. Pre-requisitos
 •	3 Máquinas Virtuales con Ubuntu Server 24.04 LTS instalado.
 

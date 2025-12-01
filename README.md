@@ -15,7 +15,7 @@
 
 ## 🎯 I. Objetivo del Proyecto
 
-Describe el objetivo de manera puntual, debe ser específica y medible, tal como se define en el banco de proyectos o tal como lo plantean como proyecto.
+Diseñar e implementar una plataforma de mensajería instantánea empresarial basada en protocolo XMPP con arquitectura de alta disponibilidad, replicación bidireccional Master-Master de bases de datos, balanceo de carga automatizado y sistema de monitoreo en tiempo real para la Universidad San Francisco Xavier de Chuquisaca.
 
 > **Objetivo:** [Indicar el objetivo del proyecto, ej: "Diseñar y configurar un clúster de Base de Datos con replicación Maestro-Esclavo para optimizar el rendimiento y la tolerancia a fallos."]
 

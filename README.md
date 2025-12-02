@@ -8,9 +8,9 @@
 
 | Nombre Completo | Rol en el Proyecto | Contacto (GitHub/Email) |
 | :--- | :--- | :--- |
-| Marco lopez Yapu |  Administrador de Sistemas | marcomlz |
-| Luis hernan Huallpa Franses |  Administrador de Sistemas | luishuf |
-| Rodrigo Caballero Yucra  | Administrador de Sistemas |rodricy |
+| Marco lopez Yapu |  Administrador de Sistemas | @marcomlz |
+| Luis hernan Huallpa Franses |  Administrador de Sistemas | @luishuf |
+| Rodrigo Caballero Yucra  | Administrador de Sistemas |@rodricy |
 ## 🎯 I. Objetivo del Proyecto
 
 Diseñar e implementar una plataforma de mensajería instantánea empresarial basada en protocolo XMPP con arquitectura de alta disponibilidad, replicación bidireccional Master-Master de bases de datos, balanceo de carga automatizado y sistema de monitoreo en tiempo real para la Universidad San Francisco Xavier de Chuquisaca.

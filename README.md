@@ -17,6 +17,20 @@ Diseñar e implementar una plataforma de mensajería instantánea empresarial ba
 
 ## 💡 II. Justificación e Importancia
 
+📌 Problemática
+La Universidad San Francisco Xavier depende de plataformas comerciales externas (WhatsApp, Telegram) para comunicación institucional, lo que genera:
+
+Riesgo de seguridad: Datos sensibles en servidores externos
+Falta de control: Sin gestión de usuarios ni auditoría
+Costos recurrentes: Licencias sin control de infraestructura
+
+🎯 Justificación
+**Soberanía Digital y Seguridad**
+
+Una plataforma XMPP propia garantiza que datos institucionales permanezcan en servidores universitarios, cumpliendo políticas de protección de datos y eliminando dependencia de terceros.
+
+**Alta Disponibilidad**
+Arquitectura con replicación Master-Master y balanceo de carga asegura 99.9% uptime, eliminando interrupciones críticas en comunicación académica-administrativa.
 
 
 ## 🛠️ III. Tecnologías y Conceptos Implementados
@@ -354,4 +368,3 @@ El proyecto demostró que es posible construir infraestructura empresarial robus
 
 
 
-[Resumen de los principales logros y desafíos técnicos superados. ¿Qué harían diferente?]
